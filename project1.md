@@ -95,3 +95,54 @@ To exit the MySQL console, type:
 
 STEP THREE:  INSTALLING PHP
 
+*PHP is the component of our setup that will process code to display dynamic content to the end user. Furthermore,  we’ll need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. we’ll also need libapache2-mod-php to enable Apache to handle PHP files. Core PHP packages will automatically be installed as dependencies.*
+
+To install these 3 packages at once, run:
+
+> sudo apt-get install php libapache2-mod-php php-mysql
+Once the installation is finished, 
+
+you can run the following command to confirm your PHP version:
+> php -v
+
+![Install the 3 packages php libapache2-mod-php php-mysql](https://user-images.githubusercontent.com/83889926/156075056-ae9208b2-6f25-49f0-b70f-ed5c2f71c2cf.PNG)
+
+*At this point, your LAMP stack is completely installed and fully operational*
+
+Linux (Ubuntu)
+Apache HTTP Server
+MySQL
+PHP
+
+
+###### STEP FOUR:  CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE
+
+![Successfully created A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE](https://user-images.githubusercontent.com/83889926/156075718-52aeb66e-4481-4c4d-b27a-99a7fbdb627c.PNG)
+
+
+###### STEP FIVE: ENABLE PHP ON THE WEBSITE
+
+DirectoryIndex settings on Apache, a file named index.html will always take precedence over an index.php file. Because this page will take precedence over the index.php page, it will then become the landing page for the application. Once maintenance is over, the index.html is renamed or removed from the document root, bringing back the regular application page.
+
+In case you want to change this behavior, you’ll need to edit the /etc/apache2/mods-enabled/dir.conf file and change the order in which the index.php file is listed within the DirectoryIndex directive:
+
+> sudo vim /etc/apache2/mods-enabled/dir.conf
+<IfModule mod_dir.c>
+        #Change this:
+        #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+        #To this:
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+
+After saving and closing the file, WE will need to reload Apache so the changes take effect:
+
+> sudo systemctl reload apache2
+
+Create a new file named index.php inside your custom web root folder:
+
+> vim /var/www/projectlamp/index.php
+This will open a blank file. Add the following text, which is valid PHP code, inside the file:
+
+![web page](https://user-images.githubusercontent.com/83889926/156076969-b360e3cf-dc87-43ec-91e4-d9a95e22dc7e.PNG)
+
+
