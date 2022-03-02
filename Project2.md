@@ -2,11 +2,6 @@
 
 #### STEP ONE: Installing the Nginx Web Server
 
-
-
-*In order to display web pages to our site visitors, we are going to employ Nginx, a high-performance web server and start off by updating your server’s package index. 
-Following that, we can use apt-get install to get Nginx installed:*.
-
 | Nginx installed |
 
 > sudo apt-get update
@@ -14,9 +9,7 @@ Following that, we can use apt-get install to get Nginx installed:*.
 
 Nginx web server is active and running on Ubuntu 20.04 server.
 
-
 ![connect to instance through ssh and update](https://user-images.githubusercontent.com/83889926/156261540-4b347a6b-7849-4019-b13a-668c2e051f61.PNG)
-
 
 nginx was successfully installed and is running as a service in Ubuntu, run:
 
@@ -30,14 +23,9 @@ curl http://18.222.230.79:80
 
 ![Nginx server respond](https://user-images.githubusercontent.com/83889926/156262684-0a52584d-b5ea-41e4-9cbc-73fa0f4fb98f.PNG)
 
-
-
-
-
 ### STEP TWO: INSTALLING MYSQL
 
-Now that we have a web server up and running, we need to install a Database Management System (DBMS) to be able to store and manage data for our site in a relational database. 
-
+We need to install a Database Management System (DBMS) to be able to store and manage data for our site in a relational database. 
 
 > sudo apt-get install mysql-server
 
@@ -49,34 +37,17 @@ When the installation is finished, it’s recommended that you run a security sc
 
 ![security script that comes pre-installed with MySQL](https://user-images.githubusercontent.com/83889926/156263548-ff762a1b-b182-4495-a33b-85d38caaf4ee.PNG)
 
-
-This will ask if you want to configure the VALIDATE PASSWORD PLUGIN.
-
-Answer Y for yes, or anything else to continue without enabling.
-
 ## When you’re finished, test if you’re able to log in to the MySQL console by typing:
 
 ![Login to MySQL](https://user-images.githubusercontent.com/83889926/156263612-0aba5a3a-df02-4c14-ada3-34f42c5d558b.PNG)
 
 > sudo mysql
-This will connect to the MySQL server as the administrative database user root, which is inferred by the use of sudo when running this command. You should see output like this:
 
 ![MYSQL Installed](https://user-images.githubusercontent.com/83889926/156263835-f1b1b6a5-6910-485c-b9ac-0d5c57c3f6ca.PNG)
 
-
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 11
-Server version: 8.0.22-0ubuntu0.20.04.3 (Ubuntu)
-Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
 > mysql> 
 To exit the MySQL console, type:
-
 > mysql> exit
-
 
 
 ### STEP THREE:  INSTALLING PHP
@@ -88,16 +59,10 @@ To install these 2 packages at once, run:
 > sudo apt-get install php-fpm php-mysql
 Once the installation is finished, 
 
-When prompted, type Y and press ENTER to confirm installation.
-
 You now have your PHP components installed
-
-
-
 
 ### STEP FOUR:  CONFIGURING NGINX TO USE PHP PROCESSOR
 
-When using the Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server.
 NOTE: On Ubuntu 20.04, Nginx has one server block enabled by default and is configured to serve documents out of a directory at /var/www/html.
 
 Create the root web directory for your_domain as follows:
@@ -112,7 +77,7 @@ Then we open a new configuration file in Nginx’s sites-available directory usi
 
 > sudo nano /etc/nginx/sites-available/projectLEMP
 
-NOTE: This will create a new blank file. Paste in the following bare-bones configuration:
+Paste in the following bare-bones configuration:
 
 #/etc/nginx/sites-available/projectLEMP
 
@@ -138,13 +103,11 @@ NOTE: This will create a new blank file. Paste in the following bare-bones confi
 
 }*
 
-note: When you’re done editing, save and close the file. If you’re using nano, typing CTRL+X and then y and ENTER to confirm.
+If you’re using nano, typing CTRL+X and then y and ENTER to confirm.
 
-Activate your configuration by linking to the config file from Nginx’s sites-enabled directory:
+linking to the config file from Nginx’s sites-enabled directory:
 
 > sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
-
-This will tell Nginx to use the configuration next time it is reloaded. We can test our configuration for syntax errors by typing:
 
 > sudo nginx -t
 |You shall see following message:|
@@ -156,8 +119,6 @@ Note: We also need to disable default Nginx host that is currently configured to
 
 > sudo unlink /etc/nginx/sites-enabled/default
 
-|When you are ready, reload Nginx to apply the changes:|
-
 > sudo systemctl reload nginx
 
 **Your new website is now active, but the web root /var/www/projectLEMP is still empty. Create an index.html file in that location so that we can test that your new server block works as expected:**
@@ -168,17 +129,10 @@ Now go to your browser and try to open your website URL using IP address:
 
 http://18.222.230.79:80
 
-
 ![Create an index html file in that location so that we can test that your new server block](https://user-images.githubusercontent.com/83889926/156265752-0aabcaef-5600-4d2c-bf8b-cc5c21fc1d41.PNG)
 
-
-
 ### STEP FIVE: TESTING PHP WITH NGINX
-
-
-Note, The LAMP stack is completely installed and fully operational.
-
-We can do this by creating a test PHP file in our document root. Open a new file called info.php within our document root in our text editor:
+Open a new file called info.php within our document root in our text editor:
 
 > sudo nano /var/www/projectLEMP/info.php
 
