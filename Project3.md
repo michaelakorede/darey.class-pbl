@@ -3,10 +3,15 @@
 
 #### STEP ONE: Beckend configuration
 > sudo apt-get update
+
 > sudo apt upgrade
+
 |Install Node.js|
+
 > sudo apt-get install -y nodejs
+> 
 ![installed nodejs](https://user-images.githubusercontent.com/83889926/158443478-cea9607f-a0ef-4fbb-bb48-0e2aa1152052.PNG)
+
 {Application code Setup} 
 > Mkdir Todo 
 > (Change the directory to Todo) 
