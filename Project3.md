@@ -108,3 +108,58 @@ Todo directory, and simply do:
 
 Your app should open and start running on localhost:3000
 ![Run on Port 3000](https://user-images.githubusercontent.com/83889926/158450689-59cbc044-b2a9-4f7c-ac24-2dcf63c99710.PNG)
+
+###### Creating your React Components
+
+>cd client & cd src & mkdir components
+
+>cd components
+
+Inside ‘components’ directory create three files Input.js, ListTodo.js and Todo.js.
+
+Open Input.js file
+
+vi Input.js
+
+Copy and paste the following code ..()
+
+###### To make use of Axios, which is a Promise based HTTP client for the browser and node.js
+Move to the src folder
+
+cd ..Move to clients folder: cd ..Install Axios: npm install axios
+
+Go to ‘components’ directory: cd src/components
+After that open your ListTodo.js
+
+>vi ListTodo.js
+
+in the ListTodo.js copy and paste the following code..()
+Then in your Todo.js file you write the following code..()
+
+Adjust our react code. Delete the logo and adjust our App.js.
+Move to the src folder: cd ..
+Make sure that you are in the src folder and run
+
+>vi App.js
+
+>Copy and paste the code..()
+
+>vi App.css
+
+Then paste the following code..() into App.css:
+
+In the src directory open the index.css
+
+>vim index.css
+
+Copy and paste the code..() 
+
+Go to the Todo directory
+
+>cd ../..
+
+run:
+
+>npm run dev
+
+![React app](https://user-images.githubusercontent.com/83889926/158452739-4ee4654f-08dc-4716-8937-dcdb5d80f313.PNG)
