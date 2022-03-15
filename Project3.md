@@ -7,7 +7,10 @@
 |Install Node.js|
 > sudo apt-get install -y nodejs
 ![installed nodejs](https://user-images.githubusercontent.com/83889926/158443478-cea9607f-a0ef-4fbb-bb48-0e2aa1152052.PNG)
-{Application code Setup} > Mkdir Todo (Change the directory to Todo) >cd Todo
+{Application code Setup} 
+> Mkdir Todo 
+> (Change the directory to Todo) 
+> >cd Todo
 Initialise my project to create a new file package.json
 > npm init
 |Install Expressjs|
