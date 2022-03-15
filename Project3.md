@@ -82,6 +82,29 @@ Create GET
 ![GET](https://user-images.githubusercontent.com/83889926/158449434-aca98c96-0d05-4baa-adf5-9d0a2de27be5.PNG)
 
 
-### STEP TWO: INSTALLING MYSQL
+### STEP TWO: FRONTEND CREATION
+Create User Interface for web  clinet 
 
+Todo Directory , Run >npx create-react-app client. This will create a new folder in your Todo directory called client.
+Running a React App
+Before testing the react app, there are some dependencies that need to be installed.
 
+Install concurrently and nodemon
+>npm install concurrently --save-dev
+Install nodemon. 
+>npm install nodemon --save-dev
+In Todo folder open the package.json file. Change the highlighted part of the below screenshot..() and replace with the code..()
+
+Configure Proxy in package.json
+
+cd client
+Open the package.json file
+vi package.json
+Add the key value pair in the package.json file "proxy": "http://localhost:5000".
+
+Todo directory, and simply do:
+
+>npm run dev
+
+Your app should open and start running on localhost:3000
+![Run on Port 3000](https://user-images.githubusercontent.com/83889926/158450689-59cbc044-b2a9-4f7c-ac24-2dcf63c99710.PNG)
