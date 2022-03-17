@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## MEAN STACK IMPLEMENTATION 
 
 #### STEP ONE: Mean Stack Deployment to Ubuntu in AWS
@@ -127,7 +126,6 @@ Now you can access our Book Register web application from the Internet with a br
 
 
 
-=======
 
 ## MEARN STACK IMPLEMENTATION
 
@@ -293,4 +291,3 @@ run:
 >npm run dev
 
 ![React app](https://user-images.githubusercontent.com/83889926/158452739-4ee4654f-08dc-4716-8937-dcdb5d80f313.PNG)
->>>>>>> e68a363b2d48b87165b89d37f47f8625b7501dfb
